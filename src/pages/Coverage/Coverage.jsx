@@ -17,7 +17,7 @@ const Coverage = () => {
     if (district) {
       const coord = [district.latitude, district.longitude];
       console.log(district, coord);
-      mapRef.current.flyTo(coord,14)
+      mapRef.current.flyTo(coord, 14);
     }
   };
   return (
@@ -25,11 +25,11 @@ const Coverage = () => {
       <h2 className="text-5xl font-extrabold">
         We are available in 64 districts
       </h2>
-      <div>
-        <form onSubmit={handleSearch} className="">
-          <label className="input">
+      <div className="my-12">
+        <form onSubmit={handleSearch} className="relative">
+          <label className="input rounded-full bg-[#f0f3f6]">
             <svg
-              className="h-[1em] opacity-50"
+              className="h-[1em] opacity-90"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -47,12 +47,19 @@ const Coverage = () => {
             <input
               name="location"
               type="search"
-              className="grow"
+              className="grow focus:outline-none focus:ring-0  "
               placeholder="Search"
             />
           </label>
+          <button className="btn rounded-full btn-primary text-black font-bold absolute left-70 z-50 ">
+            Search
+          </button>
         </form>
       </div>
+      <div className="divider mb-10"></div>
+      <h4 className="text-3xl font-extrabold text-secondary mb-12">
+        We deliver almost all over Bangladesh
+      </h4>
       <div className=" w-full h-[800px] border">
         <MapContainer
           center={position}
